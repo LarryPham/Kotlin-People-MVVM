@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="peopleViewModel"
+            type="com.capstar.apps.people_mvvm.viewmodel.ItemPeopleViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/item_people"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{peopleViewModel::onItemClick}"
+        android:padding="@dimen/spacing_large">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_people"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            tools:imageUrl="@{peopleViewModel.profilePicture}"
+            tools:src="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/image_people"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_toEndOf="@+id/image_people"
+            android:text="@{peopleViewModel.fullName}"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Mr.Garry Gallagher" />
+
+        <TextView
+            android:id="@+id/label_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_name"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_toEndOf="@+id/image_people"
+            android:layout_toRightOf="@+id/image_people"
+            android:text="@{peopleViewModel.cellPhone}"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="14sp"
+            tools:text="0729-256-147" />
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_phone"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_toEndOf="@+id/image_people"
+            android:layout_toRightOf="@+id/image_people"
+            android:text="@{peopleViewModel.email}"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="14sp"
+            tools:text="garry.gallagher@gmamil.com" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">People-MVVM</string>
+    <string name="default_loading_people">Loading...</string>
+    <string name="error_loading_people" />
+</resources>
